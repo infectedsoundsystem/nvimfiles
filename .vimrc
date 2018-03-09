@@ -132,9 +132,11 @@ if dein#load_state(bundledir)
 
     "" My bundles
     call dein#add('Shougo/deoplete.nvim') " completion
-    call dein#add('Shougo/denite.nvim') " file/buffer/etc navigation
+    " file/buffer/etc navigation
+    call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 }) 
+    call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
     if !has('nvim')
-        " denite dependencies for Vim 8
+        " deoplete dependencies for Vim 8
         call dein#add('roxma/nvim-yarp')
         call dein#add('roxma/vim-hug-neovim-rpc')
     endif
