@@ -170,15 +170,18 @@ if dein#load_state(bundledir)
     if !has('nvim')
         call dein#add('ConradIrwin/vim-bracketed-paste') " Transparent pasting
     endif
-    " better status/tabline; browse ctags; git wrapper
+    call dein#add('majutsushi/tagbar') " Browse ctags
+    call dein#add('tpope/vim-fugitive') " Git wrapper
+    " better status/tabline
     call dein#add('vim-airline/vim-airline', {'depends' :
         \ ['majutsushi/tagbar', 'tpope/vim-fugitive']
         \ })
     call dein#add('vim-airline/vim-airline-themes') " airline themes
-    " Terraform highlighting/completion
-    call dein#add('juliosueiras/vim-terraform-completion', {'depends' :
-        \ ['hashivim/vim-terraform']
-        \ })
+    call dein#add('hashivim/vim-terraform') " Terraform support
+    " Terraform completion - @todo
+    "call dein#add('juliosueiras/vim-terraform-completion', {'depends' :
+    "    \ ['hashivim/vim-terraform']
+    "    \ })
     " LSP support
     call dein#add('autozimu/LanguageClient-neovim', {
         \ 'rev': 'next',
@@ -312,6 +315,7 @@ let g:NERDDefaultAlign = 'left'
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 let g:syntastic_terraform_tffilter_plan = 1
+let g:terraform_align=1
 """<<< Terraform
 
 " ==========================================================
