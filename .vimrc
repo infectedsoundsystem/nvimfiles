@@ -187,8 +187,8 @@ if dein#load_state(bundledir)
         \ 'rev': 'next',
         \ 'build': 'bash install.sh',
         \ })
-    call dein#add('LucHermitte/lh-vim-lib') " airline themes
-    call dein#add('LucHermitte/local_vimrc') " Terraform support
+    call dein#add('LucHermitte/lh-vim-lib') " Libs for local vimrc
+    call dein#add('LucHermitte/local_vimrc') " Local vimrc
 
     call dein#end()
     call dein#save_state()
