@@ -133,7 +133,7 @@ if dein#load_state(bundledir)
     "" My bundles
     call dein#add('Shougo/deoplete.nvim') " completion
     " file/buffer/etc navigation
-    call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 }) 
+    call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
     call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
     if !has('nvim')
         " deoplete dependencies for Vim 8
