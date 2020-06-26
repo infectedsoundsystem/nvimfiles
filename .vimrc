@@ -326,6 +326,12 @@ let g:terraform_align=1
 
 " Scheme indentation
 silent! autocmd filetype lisp,racket,scheme setlocal equalprg=scmindent
+" YAML indentation
+autocmd! BufEnter *.template :set ft=yaml ts=2 sw=2 et
+autocmd! BufEnter *.yaml :set ft=yaml ts=2 sw=2 et
+autocmd! BufEnter *.yml :set ft=yaml ts=2 sw=2 et
+autocmd! BufEnter Jenkinsfile :set ft=groovy
+
 
 " Paste from clipboard
 map <leader>p "+p
